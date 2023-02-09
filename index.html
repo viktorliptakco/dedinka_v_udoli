@@ -9,7 +9,9 @@
 </head>
 <body>
     <div id="video-container">
-        <video id="video" src="Dedinka.mp4"></video>
+        <video id="video">
+            <source src="Dedinka.mp4" type="video/mp4">
+        </video>
     </div>
     <div>
         <p>ahoj</p>
@@ -23,7 +25,19 @@
 
         // Check if the device is an iOS device
         if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-            var initialY;
+            // Create an event listener for the touchmove event on iOS devices
+            window.addEventListener('touchmove', function(event) {
+                // Get the current touch position
+                var touchY = event.touches[0].clientY;
+
+                // Calculate the percentage of the video that should be played based on the touch position
+                var percentage = touchY / window.innerHeight;
+
+                // Update the current time of the video
+                video.currentTime = video.duration * percentage;
+            });
+            
+            /*var initialY;
 
             document.addEventListener('touchstart', function(event) {
             initialY = event.touches[0].clientY;
@@ -37,7 +51,7 @@
             });
             
             
-            /*// Create an event listener for the scroll event on iOS devices
+            // Create an event listener for the scroll event on iOS devices
             window.addEventListener('touchmove', function() {
             // Get the current scroll position
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
