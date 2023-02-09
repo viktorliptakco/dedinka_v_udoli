@@ -1,0 +1,23 @@
+body {
+  height: 200vh;
+  margin: 0;
+}
+
+#video-container {
+  max-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+p {
+  position: absolute;
+  z-index: 5;
+}/*# sourceMappingURL=style.css.map */

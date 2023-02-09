@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="video-container">
+        <video id="video" src="Dedinka.mp4"></video>
+    </div>
+    <div>
+        <p>ahoj</p>
+    </div>
+    
+    <script>
+       
+       // Get a reference to the video element
+        var video = document.getElementById('video');
+
+        // Create an event listener for the scroll event
+        window.addEventListener('scroll', function() {
+        // Get the current scroll position
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Calculate the percentage of the video that should be played based on the scroll position
+        var percentage = scrollTop / (document.body.scrollHeight - window.innerHeight);
+
+        // Update the current time of the video
+        video.currentTime = video.duration * percentage;
+        });
+       
+    </script>
+</body>
+</html>
