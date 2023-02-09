@@ -20,4 +20,15 @@ body {
 p {
   position: absolute;
   z-index: 5;
+}
+
+@media (orientation: landscape) {
+  #video-container {
+    min-width: 100vw;
+  }
+}
+@media (orientation: portrait) {
+  #video-container {
+    min-height: 100vh;
+  }
 }/*# sourceMappingURL=style.css.map */
