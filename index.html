@@ -15,22 +15,44 @@
         <p>ahoj</p>
     </div>
     
+    
     <script>
-       
-       // Get a reference to the video element
-        var video = document.getElementById('video');
 
-        // Create an event listener for the scroll event
-        window.addEventListener('scroll', function() {
-        // Get the current scroll position
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+            var video = document.getElementById('video');
+            var initialY;
 
-        // Calculate the percentage of the video that should be played based on the scroll position
-        var percentage = scrollTop / (document.body.scrollHeight - window.innerHeight);
+            document.addEventListener('touchstart', function(event) {
+            initialY = event.touches[0].clientY;
+            });
 
-        // Update the current time of the video
-        video.currentTime = video.duration * percentage;
+            document.addEventListener('touchmove', function(event) {
+            var currentY = event.touches[0].clientY;
+            var difference = initialY - currentY;
+            var percentage = difference / window.innerHeight;
+            video.currentTime = video.duration * percentage;
         });
+        } else {
+            // Get a reference to the video element
+            var video = document.getElementById('video');
+
+            // Create an event listener for the scroll event
+            window.addEventListener('scroll', function() {
+            // Get the current scroll position
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Calculate the percentage of the video that should be played based on the scroll position
+            var percentage = scrollTop / (document.body.scrollHeight - window.innerHeight);
+
+            // Update the current time of the video
+            video.currentTime = video.duration * percentage;
+        });
+        }
+
+
+       
+
+
        
     </script>
 </body>

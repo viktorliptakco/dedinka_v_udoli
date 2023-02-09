@@ -1,22 +1,22 @@
-        body {
-            height: 200vh;
-            margin: 0;
-        }
+body {
+    height: 200vh;
+    margin: 0;
+}
 
-        #video-container {
-        max-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
-        position: fixed;
-        }
+#video-container {
+    max-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+}
 
-        #video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        }
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        p {
-            position: absolute;
-            z-index: 5;
-        }
+p {
+    position: absolute;
+    z-index: 5;
+}
