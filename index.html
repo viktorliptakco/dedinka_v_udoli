@@ -13,8 +13,12 @@
             <source src="Dedinka.mp4" type="video/mp4">
         </video>
     </div>
-    <div>
+    <div class="text">
         <p>ahoj</p>
+        <p class="th">toto je jedna malá Dedinka</p>
+        <p>vytovril som niečo ako parallax efekt</p>
+        <p class="th">pomocou javascriptu</p>
+        <p>prehrávanie je naviazané na scrollovanie</p>
     </div>
     
     
@@ -27,15 +31,15 @@
         if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
             // Create an event listener for the touchmove event on iOS devices
             window.addEventListener('touchmove', function(event) {
-                // Get the current touch position
-                var touchY = event.touches[0].clientY;
+            // Get the current touch position
+            var touchY = event.touches[0].clientY;
 
-                // Calculate the percentage of the video that should be played based on the touch position
-                var percentage = touchY / window.innerHeight;
+            // Calculate the percentage of the video that should be played based on the touch position
+            var percentage = touchY / window.innerHeight;
 
-                // Update the current time of the video
-                video.currentTime = video.duration * percentage;
-            });
+            // Update the current time of the video
+            video.currentTime = video.duration * percentage;
+        });
             
             /*var initialY;
 

@@ -1,4 +1,10 @@
+@font-face {
+    font-family: Quiscksand;
+    src: url(../fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+
 body {
+    font-family: 'Quiscksand';
     height: 200vh;
     margin: 0;
 }
@@ -16,9 +22,26 @@ body {
     object-fit: cover;
 }
 
-p {
+.text {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 5;
+    & p {
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        border-radius: 1em;
+        width: fit-content;
+        margin: 2em 2em;
+        padding: 1em;
+        font-size: 2.2em;
+        color: white;
+    }
+    & .th {
+        align-self: end;
+    }
 }
 
 @media (orientation: landscape) {
